@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Trabalho01_2025_WEB2_Spring.iml" filepath="$PROJECT_DIR$/.idea/Trabalho01_2025_WEB2_Spring.iml" />
+      <module fileurl="file://$PROJECT_DIR$/web2/web2/escola.iml" filepath="$PROJECT_DIR$/web2/web2/escola.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Trabalho 1/escola/web2.iml" filepath="$PROJECT_DIR$/Trabalho 1/escola/web2.iml" />
+    </modules>
+  </component>
+</project>

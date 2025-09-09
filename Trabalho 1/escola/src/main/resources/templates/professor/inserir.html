@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cadastrar Professor</title>
+</head>
+<body>
+<h2>Cadastrar Professor</h2>
+<form method="post" th:action="@{/professor/inserir}" enctype="multipart/form-data">
+	Nome: <input type="text" name="nome"/> <br />
+	Email: <input type="email" name="email"/> <br />
+	Imagem: <input type="file" name="file" /> <br />
+	<button type="submit">Enviar</button>
+</form>
+</body>
+</html>

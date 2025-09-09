@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Editar Professor</title>
+</head>
+<body>
+<h2>Editar Professor</h2>
+<form method="post" th:action="@{/professor/editar/{id}(id=${professor.id})}" th:object="${professor}" enctype="multipart/form-data">
+	Nome: <input type="text" th:field="*{nome}"/> <br />
+	Email: <input type="email" th:field="*{email}"/> <br />
+	<br/>
+	<p>Imagem Atual:</p>
+	<img th:if="*{imagem != null AND imagem != ''}" th:src="@{/uploads/img/{imagem}(imagem=*{imagem})}" width="200"/>
+	<p th:if="*{imagem == null OR imagem == ''}">Nenhuma imagem cadastrada.</p>
+	<br/>
+	Nova Imagem (deixe em branco para manter a atual): <input type="file" name="file" /> <br />
+	<br/>
+	<button type="submit">Salvar Alterações</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Lista de Categorias</title>
+</head>
+<body>
+<h2>Categorias Cadastradas</h2>
+
+<th:block th:insert="~{categoria/msg}"></th:block>
+
+<form method="post" th:action="@{/categoria/listar}">
+  Busca por nome: <input type="text" name="busca" />
+  <button type="submit">Buscar</button>
+</form>
+<br/>
+<a href="/categoria/inserir">Cadastrar Nova Categoria</a>
+<br/><br/>
+
+<table border="1">
+  <thead>
+  <th>ID</th>
+  <th>Nome</th>
+  <th colspan="2">Ações</th>
+  </thead>
+  <tbody>
+  <tr th:each="categoria: ${categorias}">
+    <td th:text="${categoria.id}"></td>
+    <td th:text="${categoria.nome}"></td>
+    <td><a th:href="@{/categoria/editar/{id}(id=${categoria.id})}">Editar</a></td>
+    <td><a th:href="@{/categoria/excluir/{id}(id=${categoria.id})}">Excluir</a></td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>

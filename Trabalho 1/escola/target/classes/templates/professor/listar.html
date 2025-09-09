@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Lista de Professores</title>
+</head>
+<body>
+<h2>Professores Cadastrados</h2>
+
+<th:block th:insert="~{professor/msg}"></th:block>
+
+<form method="post" th:action="@{/professor/listar}">
+	Busca por nome: <input type="text" name="busca" />
+	<button type="submit">Buscar</button>
+</form>
+<br/>
+<a href="/professor/inserir">Cadastrar Novo Professor</a>
+<br/><br/>
+
+<table border="1">
+	<thead>
+	<th>ID</th>
+	<th>Nome</th>
+	<th>Email</th>
+	<th>Imagem</th>
+	<th colspan="2">Ações</th>
+	</thead>
+	<tbody>
+	<tr th:each="professor: ${professores}">
+		<td th:text="${professor.id}"></td>
+		<td th:text="${professor.nome}"></td>
+		<td th:text="${professor.email}"></td>
+		<td>
+			<img th:if="${professor.imagem != null AND professor.imagem != ''}"
+				 th:src="@{/uploads/img/{imagem}(imagem=${professor.imagem})}" width="150"/>
+		</td>
+		<td><a th:href="@{/professor/editar/{id}(id=${professor.id})}">Editar</a></td>
+		<td><a th:href="@{/professor/excluir/{id}(id=${professor.id})}">Excluir</a></td>
+	</tr>
+	</tbody>
+</table>
+</body>
+</html>
