@@ -2,7 +2,7 @@
 
 Este projeto é uma aplicação web extremamente simples com foco no backend, desenvolvida como atividade para a disciplina de Web II. O sistema consiste em um CRUD (Create, Read, Update, Delete) completo para gerenciar Professores e Categorias, construído com o framework Spring Boot.
 
-![Demonstração do Sistema de Cadastro](./assets/demo-crud-professor.gif)
+![Demonstração do Sistema de Cadastro](https://raw.githubusercontent.com/PedroCoelhoIF/Sistema_Cadastro_Professores/refs/heads/master/Trabalho%201/escola/assets/demo-crud-professor.gif)
 
 ## Tecnologias Utilizadas
 * **Java 21**
