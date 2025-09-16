@@ -1,4 +1,4 @@
-# Projeto Escola - CRUD com Spring Boot
+# Projeto Escola (Etapa - 1) - CRUD com Spring Boot
 
 Este projeto é uma aplicação web extremamente simples com foco no backend, desenvolvida como atividade para a disciplina de Web II. O sistema consiste em um CRUD (Create, Read, Update, Delete) completo para gerenciar Professores e Categorias, construído com o framework Spring Boot.
 
