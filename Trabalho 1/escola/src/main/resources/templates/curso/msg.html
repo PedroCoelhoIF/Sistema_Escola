@@ -1,0 +1,14 @@
+<div th:if="${not #strings.isEmpty(inserirok)}">
+  <p style="color:green; font-weight:bold;" th:text="${inserirok}"></p>
+</div>
+
+<div th:if="${not #strings.isEmpty(sucesso)}">
+  <p style="color:blue; font-weight:bold;" th:text="${sucesso}"></p>
+</div>
+<div th:if="${not #strings.isEmpty(excluirok)}">
+  <p style="color:blue; font-weight:bold;" th:text="${excluirok}"></p>
+</div>
+
+<div th:if="${not #strings.isEmpty(erro)}">
+  <p style="color:red; font-weight:bold;" th:text="${erro}"></p>
+</div>
