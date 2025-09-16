@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista de Cursos</title>
+</head>
+<body>
+<h2>Cursos Cadastrados</h2>
+
+<th:block th:insert="~{professor/msg}"></th:block> <a href="/curso/inserir">Cadastrar Novo Curso</a>
+<br/><br/>
+
+<table border="1">
+    <thead>
+    <th>ID</th>
+    <th>Nome</th>
+    <th>Professor</th>
+    <th>Categoria</th>
+    <th>Data de Início</th>
+    <th>Data Final</th>
+    <th>Imagem</th>
+    <th colspan="2">Ações</th>
+    </thead>
+    <tbody>
+    <tr th:each="curso : ${cursos}">
+        <td th:text="${curso.id}"></td>
+        <td th:text="${curso.nome}"></td>
+        <td th:text="${curso.professor?.nome}"></td>
+        <td th:text="${curso.categoria?.nome}"></td>
+        <td th:text="${#temporals.format(curso.dataInicio, 'dd/MM/yyyy')}"></td>
+        <td th:text="${#temporals.format(curso.dataFim, 'dd/MM/yyyy')}"></td>
+        <td>
+            <img th:if="${curso.imagem != null AND curso.imagem != ''}"
+                 th:src="@{/uploads/img/{imagem}(imagem=${curso.imagem})}" width="150"/>
+        </td>
+        <td><a th:href="@{/curso/editar/{id}(id=${curso.id})}">Editar</a></td>
+        <td><a th:href="@{/curso/excluir/{id}(id=${curso.id})}">Excluir</a></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

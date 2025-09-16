@@ -1,10 +1,8 @@
 package com.escola.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 import java.io.Serializable;
 
@@ -21,6 +19,17 @@ public class Professor implements Serializable {
     private String email;
     private String imagem;
 
+    @OneToMany(mappedBy = "professor")
+    private List<Curso> cursos;
+
+
+    public List<Curso> getCursos() {
+        return cursos;
+    }
+
+    public void setCursos(List<Curso> cursos) {
+        this.cursos = cursos;
+    }
 
 
     public Integer getId() {

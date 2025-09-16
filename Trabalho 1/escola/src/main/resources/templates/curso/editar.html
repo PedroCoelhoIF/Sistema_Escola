@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Editar Curso</title>
+</head>
+<body>
+<h2>Editar Curso</h2>
+
+<div th:if="${errors}">
+  <ul style="color:red;">
+    <li th:each="error : ${errors}" th:text="${error.defaultMessage}"></li>
+  </ul>
+</div>
+
+<form method="post" th:action="@{/curso/editar/{id}(id=${cursoId})}" th:object="${cursoDTO}" enctype="multipart/form-data">
+  Nome: <input type="text" th:field="*{nome}"/> <br />
+  Descrição: <textarea th:field="*{descricao}"></textarea> <br />
+  Data de Início: <input type="date" th:field="*{dataInicio}"/> <br />
+  Data Final: <input type="date" th:field="*{dataFim}"/> <br />
+
+  Professor:
+  <select th:field="*{professorId}">
+    <option value="">Selecione um Professor</option>
+    <option th:each="prof : ${todosProfessores}"
+            th:value="${prof.id}"
+            th:text="${prof.nome}"></option>
+  </select> <br />
+
+  Categoria:
+  <select th:field="*{categoriaId}">
+    <option value="">Selecione uma Categoria</option>
+    <option th:each="cat : ${todasCategorias}"
+            th:value="${cat.id}"
+            th:text="${cat.nome}"></option>
+  </select> <br />
+
+  Nova Imagem (opcional): <input type="file" name="file" /> <br />
+  <button type="submit">Salvar Alterações</button>
+</form>
+</body>
+</html>
