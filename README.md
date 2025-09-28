@@ -25,8 +25,8 @@ A segunda etapa focou em expandir o modelo de dados e introduzir relacionamentos
     * **Categoria e Curso (One-to-Many):** Uma categoria foi vinculada a múltiplos cursos.
 * **Formulários com Relacionamentos:** Os formulários de criação e edição de cursos foram implementados com menus de seleção (dropdowns) para associar um curso a um professor e a uma categoria existentes.
 
-### Etapa 3: Construção da Interface do Utilizador (UI)
-A etapa final foi focada na experiência do utilizador final, criando uma interface pública para navegar e consumir os dados.
+### Etapa 3: Construção de uma interface de usuário (UI)
+A etapa final foi focada na experiência do usuário, criando uma interface pública para navegar e consumir os dados.
 * **Layout Consistente:** Criação de um layout padrão com um menu de navegação (`navbar`) reutilizável em todas as páginas.
 * **Menu Dinâmico:** O menu de navegação agora exibe dinamicamente a lista de categorias de cursos extraídas do banco de dados.
 * **Páginas Públicas:**
@@ -36,13 +36,15 @@ A etapa final foi focada na experiência do utilizador final, criando uma interf
 * **Funcionalidade de Busca:** Implementação de uma barra de pesquisa no menu para buscar cursos por nome.
 * **Estilização com CSS:** Criação de uma folha de estilos (`style.css`) para dar ao site uma identidade visual coesa e profissional.
 
-# Cadastro,Edição e Exclusão de Professores
+### Demonstração do Sistema Final:
+
+# Cadastro, Edição e Exclusão de Professores
 ![Demonstração do Sistema de Cadastro de Professores](https://raw.githubusercontent.com/PedroCoelhoIF/Sistema_Escola/refs/heads/master/Trabalho%201/escola/assets/inserir-editar-excluir-professor.gif)
 
-# Cadastro,Edição e Exclusão de Categorias
+# Cadastro, Edição e Exclusão de Categorias
 ![Demonstração do Sistema de Cadastro de Categorias](https://raw.githubusercontent.com/PedroCoelhoIF/Sistema_Escola/refs/heads/master/Trabalho%201/escola/assets/inserir-editar-excluir-categoria.gif) 
 
-# Cadastro,Edição e Exclusão de Cursos
+# Cadastro, Edição e Exclusão de Cursos
 ![Demonstração do Sistema de Cadastro de Cursos](https://raw.githubusercontent.com/PedroCoelhoIF/Sistema_Escola/refs/heads/master/Trabalho%201/escola/assets/inserir-editar-excluir-curso.gif) 
 
 # Filtrar cursos por categoria
