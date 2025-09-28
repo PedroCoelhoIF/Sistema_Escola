@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<nav th:fragment="navbar">
+    <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 30px; background-color: #4a148c; border-bottom: 3px solid #38006b; gap: 30px;">
+
+        <div style="display: flex; align-items: center; gap: 15px;">
+            <a th:href="@{/}" class="nav-button">Página Inicial</a>
+            <a th:href="@{/professor/listar}" class="nav-button">Professores</a>
+            <a th:href="@{/categoria/listar}" class="nav-button">Categorias</a>
+            <a th:href="@{/curso/listar}" class="nav-button">Cursos</a>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 15px;">
+
+            <div class="dropdown">
+                <a href="#" class="nav-button">Cursos por Categoria</a>
+                <div class="dropdown-content">
+                    <a th:each="categoria : ${todasCategoriasNav}"
+                       th:href="@{/curso/categoria/{id}(id=${categoria.id})}"
+                       th:text="${categoria.nome}">
+                    </a>
+                </div>
+            </div>
+
+            <form th:action="@{/pesquisar}" method="get" style="display: flex; gap: 5px;">
+                <input type="text" name="query" placeholder="Buscar por curso..."/>
+                <button type="submit">Pesquisar</button>
+            </form>
+        </div>
+
+    </div>
+</nav>
+
+</body>
+</html>

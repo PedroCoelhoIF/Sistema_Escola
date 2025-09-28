@@ -160,4 +160,32 @@ public class CursoController {
         msg.addFlashAttribute("excluirok", "Curso excluído com sucesso!");
         return "redirect:/curso/listar";
     }
+
+    @GetMapping("/categoria/{id}")
+    public ModelAndView cursosPorCategoria(@PathVariable("id") Integer id) {
+        ModelAndView mv = new ModelAndView("curso/cursos-por-categoria");
+
+        List<Curso> cursos = cursoRepository.findByCategoriaId(id);
+        Optional<Categoria> categoria = categoriaRepository.findById(id);
+
+        mv.addObject("cursos", cursos);
+        categoria.ifPresent(cat -> mv.addObject("categoria", cat));
+        return mv;
+    }
+
+    @GetMapping("/{id}")
+    public ModelAndView detalheCurso(@PathVariable("id") Integer id) {
+        ModelAndView mv = new ModelAndView("curso/detalhe");
+        Optional<Curso> curso = cursoRepository.findById(id);
+
+        if (curso.isPresent()) {
+            mv.addObject("curso", curso.get());
+        } else {
+            return new ModelAndView("redirect:/curso/listar");
+        }
+
+        return mv;
+    }
+
+
 }

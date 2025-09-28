@@ -2,8 +2,11 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 	<title>Lista de Professores</title>
+	<link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
+<div th:insert="~{fragments/navbar :: navbar}"></div>
+<div class="content-card">
 <h2>Professores Cadastrados</h2>
 
 <th:block th:insert="~{professor/msg}"></th:block>
@@ -38,5 +41,6 @@
 	</tr>
 	</tbody>
 </table>
+</div>
 </body>
 </html>

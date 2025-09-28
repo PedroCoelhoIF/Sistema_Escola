@@ -1,9 +1,13 @@
 <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
 <html>
 <head>
 	<title>Cadastrar Professor</title>
+	<link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
+<div th:insert="~{fragments/navbar :: navbar}"></div>
+<div class="content-card">
 <h2>Cadastrar Professor</h2>
 <form method="post" th:action="@{/professor/inserir}" enctype="multipart/form-data">
 	Nome: <input type="text" name="nome"/> <br />
@@ -11,5 +15,6 @@
 	Imagem: <input type="file" name="file" /> <br />
 	<button type="submit">Enviar</button>
 </form>
+</div>
 </body>
 </html>

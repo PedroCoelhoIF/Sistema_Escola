@@ -7,9 +7,12 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+
 @Repository
 public interface CursoRepository extends JpaRepository<Curso, Integer> {
 
+
     List<Curso> findCursoByNomeLike(String nome);
 
+    List<Curso> findByCategoriaId(Integer categoriaId);
 }

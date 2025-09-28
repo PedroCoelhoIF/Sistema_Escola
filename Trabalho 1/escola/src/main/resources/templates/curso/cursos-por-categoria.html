@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title th:if="${categoria}" th:text="'Cursos de ' + ${categoria.nome}"></title>
+  <title th:unless="${categoria}">Cursos</title>
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<div th:insert="~{fragments/navbar :: navbar}"></div>
+
+<div class="content-card">
+  <h2 th:if="${categoria}" th:text="'Cursos da Categoria: ' + ${categoria.nome}"></h2>
+  <h2 th:unless="${categoria}">Todos os Cursos</h2>
+
+  <div class="course-gallery">
+
+    <div th:if="${cursos.isEmpty()}">
+      <p>Nenhum curso encontrado para esta categoria.</p>
+    </div>
+
+    <a th:each="curso : ${cursos}" th:href="@{/curso/{id}(id=${curso.id})}" class="course-card">
+      <img th:if="${curso.imagem != null AND curso.imagem != ''}"
+           th:src="@{/uploads/img/{imagem}(imagem=${curso.imagem})}"
+           alt="Imagem do Curso"/>
+      <img th:unless="${curso.imagem != null AND curso.imagem != ''}"
+           th:src="@{/img/placeholder.png}"
+           alt="Imagem Padrão"/>
+
+      <div class="course-card-content">
+        <h3 th:text="${curso.nome}">Nome do Curso</h3>
+        <p th:text="${curso.professor?.nome}">Nome do Professor</p>
+      </div>
+    </a>
+
+  </div>
+</div>
+
+</body>
+</html>

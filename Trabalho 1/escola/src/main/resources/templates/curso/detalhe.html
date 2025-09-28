@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title th:text="${curso.nome}"></title>
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+
+</head>
+<body>
+
+<div th:insert="~{fragments/navbar :: navbar}"></div>
+
+<div class="content-card">
+  <div th:if="${curso}" th:object="${curso}" class="course-detail-container">
+
+    <div>
+      <img th:if="*{imagem != null AND imagem != ''}"
+           th:src="@{/uploads/img/{imagem}(imagem=*{imagem})}"
+           alt="Imagem do Curso" class="course-detail-image"/>
+    </div>
+
+    <div class="course-detail-info">
+      <h1 th:text="*{nome}">Nome do Curso</h1>
+      <p th:text="*{descricao}">Descrição completa do curso.</p>
+      <hr>
+      <p><span class="info-label">Professor:</span> <span th:text="*{professor?.nome}"></span></p>
+      <p><span class="info-label">Categoria:</span> <span th:text="*{categoria?.nome}"></span></p>
+      <p><span class="info-label">Data de Início:</span> <span th:text="${#temporals.format(curso.dataInicio, 'dd/MM/yyyy')}"></span></p>
+      <p><span class="info-label">Data de Término:</span> <span th:text="${#temporals.format(curso.dataFim, 'dd/MM/yyyy')}"></span></p>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
