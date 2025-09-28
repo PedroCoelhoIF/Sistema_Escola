@@ -1,6 +1,6 @@
 # Projeto Escola - CRUD Completo com Spring Boot
 
-Este projeto é uma aplicação web full-stack desenvolvida como atividade para a disciplina de Web II. O sistema consiste em um CRUD (Create, Read, Update, Delete) completo para gerenciar Cursos, Professores e Categorias, incluindo relacionamentos entre eles e com uma implementação de uma interface navegável.
+Este projeto é uma aplicação web full-stack desenvolvida como atividade para a disciplina de Web II. O sistema consiste em um CRUD (Create, Read, Update, Delete) completo para gerenciar Cursos, Professores e Categorias, incluindo relacionamentos entre eles e por fim com uma interface de usuário amigável.
 
 ## Evolução do Projeto por Etapas
 
@@ -36,18 +36,18 @@ A etapa final foi focada na experiência do usuário, criando uma interface púb
 * **Funcionalidade de Busca:** Implementação de uma barra de pesquisa no menu para buscar cursos por nome.
 * **Estilização com CSS:** Criação de uma folha de estilos (`style.css`) para dar ao site uma identidade visual coesa e profissional.
 
-### Demonstração do Sistema Final:
+# Demonstração do Sistema Final:
 
-# Cadastro, Edição e Exclusão de Professores
+### Cadastro, Edição e Exclusão de Professores
 ![Demonstração do Sistema de Cadastro de Professores](https://raw.githubusercontent.com/PedroCoelhoIF/Sistema_Escola/refs/heads/master/Trabalho%201/escola/assets/inserir-editar-excluir-professor.gif)
 
-# Cadastro, Edição e Exclusão de Categorias
+### Cadastro, Edição e Exclusão de Categorias
 ![Demonstração do Sistema de Cadastro de Categorias](https://raw.githubusercontent.com/PedroCoelhoIF/Sistema_Escola/refs/heads/master/Trabalho%201/escola/assets/inserir-editar-excluir-categoria.gif) 
 
-# Cadastro, Edição e Exclusão de Cursos
+### Cadastro, Edição e Exclusão de Cursos
 ![Demonstração do Sistema de Cadastro de Cursos](https://raw.githubusercontent.com/PedroCoelhoIF/Sistema_Escola/refs/heads/master/Trabalho%201/escola/assets/inserir-editar-excluir-curso.gif) 
 
-# Filtrar cursos por categoria
+### Filtrar cursos por categoria
 ![Demonstração do Sistema de Cadastro de Cursos](https://raw.githubusercontent.com/PedroCoelhoIF/Sistema_Escola/refs/heads/master/Trabalho%201/escola/assets/demo-cursos-por-categoria.gif) 
 
 ## Tecnologias Utilizadas
