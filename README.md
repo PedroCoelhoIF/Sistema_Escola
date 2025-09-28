@@ -1,65 +1,67 @@
-# Projeto Escola (Etapa - 1) - CRUD com Spring Boot
+# Projeto Escola - CRUD Completo com Spring Boot
 
-Este projeto é uma aplicação web extremamente simples com foco no backend, desenvolvida como atividade para a disciplina de Web II. O sistema consiste em um CRUD (Create, Read, Update, Delete) completo para gerenciar Professores e Categorias, construído com o framework Spring Boot.
+Este projeto é uma aplicação web full-stack desenvolvida como atividade para a disciplina de Web II. O sistema consiste em um CRUD (Create, Read, Update, Delete) completo para gerenciar Cursos, Professores e Categorias, incluindo relacionamentos entre eles e uma interface de utilizador navegável.
 
-![Demonstração do Sistema de Cadastro](https://raw.githubusercontent.com/PedroCoelhoIF/Sistema_Cadastro_Professores/refs/heads/master/Trabalho%201/escola/assets/demo-crud-professor.gif)
+## Evolução do Projeto por Etapas
+
+O sistema foi construído em três etapas incrementais, cada uma adicionando novas funcionalidades e complexidade.
+
+### Etapa 1: Base do CRUD e Estrutura do Projeto
+Nesta fase inicial, a estrutura fundamental da aplicação foi criada.
+* **Backend:** Configuração do projeto Spring Boot com Maven, Spring Data JPA e conexão com banco de dados MySQL.
+* **Entidades:** Criação das entidades `Professor` e `Categoria`.
+* **CRUD Básico:** Implementação das funcionalidades de Cadastrar, Listar, Editar e Excluir para Professores e Categorias.
+* **Frontend:** Criação de páginas de administração simples com Thymeleaf para exibir os dados em tabelas e interagir com o sistema.
+* **Upload de Imagem:** Implementação da funcionalidade de upload de imagem para a entidade `Professor`.
+
+![Demonstração do Sistema de Cadastro](https://raw.githubusercontent.com/PedroCoelhoIF/Sistema_Cadastro_Professores/refs/heads/master/Trabalho%201/escola/assets/demo-crud-professor.gif) 
+
+### Etapa 2: Adição de Nova Entidade e Relacionamentos
+A segunda etapa focou em expandir o modelo de dados e introduzir relacionamentos, tornando o sistema mais complexo e realista.
+* **Nova Entidade:** Adição da entidade `Curso`, com campos como nome, descrição, datas de início/fim e imagem.
+* **CRUD para Cursos:** Implementação de todas as operações CRUD para a nova entidade.
+* **Relacionamentos JPA/Hibernate:**
+    * **Professor e Curso (One-to-Many):** Um professor foi vinculado a múltiplos cursos.
+    * **Categoria e Curso (One-to-Many):** Uma categoria foi vinculada a múltiplos cursos.
+* **Formulários com Relacionamentos:** Os formulários de criação e edição de cursos foram implementados com menus de seleção (dropdowns) para associar um curso a um professor e a uma categoria existentes.
+
+### Etapa 3: Construção da Interface do Utilizador (UI)
+A etapa final foi focada na experiência do utilizador final, criando uma interface pública para navegar e consumir os dados.
+* **Layout Consistente:** Criação de um layout padrão com um menu de navegação (`navbar`) reutilizável em todas as páginas.
+* **Menu Dinâmico:** O menu de navegação agora exibe dinamicamente a lista de categorias de cursos extraídas do banco de dados.
+* **Páginas Públicas:**
+    * Criação de uma **Página Inicial**.
+    * Criação de uma **página de Cursos por Categoria**, que exibe os cursos em formato de galeria.
+    * Criação de uma **página de Detalhes do Curso**, mostrando todas as informações de um curso selecionado.
+* **Funcionalidade de Busca:** Implementação de uma barra de pesquisa no menu para buscar cursos por nome.
+* **Estilização com CSS:** Criação de uma folha de estilos (`style.css`) para dar ao site uma identidade visual coesa e profissional.
+
+#Cadastro,Edição e Exclusão de Professores
+![Demonstração do Sistema de Cadastro de Professores](https://raw.githubusercontent.com/PedroCoelhoIF/Sistema_Escola/refs/heads/master/Trabalho%201/escola/assets/inserir-editar-excluir-professor.gif)
+
+#Cadastro,Edição e Exclusão de Categorias
+![Demonstração do Sistema de Cadastro de Categorias](https://raw.githubusercontent.com/PedroCoelhoIF/Sistema_Escola/refs/heads/master/Trabalho%201/escola/assets/inserir-editar-excluir-categoria.gif) 
+
+#Cadastro,Edição e Exclusão de Cursos
+![Demonstração do Sistema de Cadastro de Cursos](https://raw.githubusercontent.com/PedroCoelhoIF/Sistema_Escola/refs/heads/master/Trabalho%201/escola/assets/inserir-editar-excluir-curso.gif) 
+
+#Filtrar cursos por categoria
+![Demonstração do Sistema de Cadastro de Cursos](https://raw.githubusercontent.com/PedroCoelhoIF/Sistema_Escola/refs/heads/master/Trabalho%201/escola/assets/demo-cursos-por-categoria.gif) 
 
 ## Tecnologias Utilizadas
-* **Java 21**
-* **Spring Boot 3**
-* **Spring Data JPA:** Para persistência de dados.
-* **Hibernate:** Como implementação do JPA.
-* **MySQL:** Como banco de dados relacional.
-* **Thymeleaf:** Como template engine para renderizar as páginas web.
-* **Maven:** Para gerenciamento de dependências e build do projeto.
-* **Git & GitHub:** Para versionamento de código.
-
-## Funcionalidades
-O sistema permite o gerenciamento completo de duas entidades principais:
-
-#### Professor
-* **Cadastrar** um novo professor, incluindo nome, email e uma imagem de perfil.
-* **Listar** todos os professores cadastrados em uma tabela.
-* **Buscar** professores por nome.
-* **Editar** as informações de um professor, incluindo a troca da imagem.
-* **Excluir** um professor do sistema.
-
-#### Categoria
-* **Cadastrar** uma nova categoria com um nome.
-* **Listar** todas as categorias.
-* **Buscar** categorias por nome.
-* **Editar** o nome de uma categoria.
-* **Excluir** uma categoria.
-
-## Como Executar o Projeto
+* **Java 21** e **Spring Boot 3**
+* **Spring Data JPA** e **Hibernate** para persistência de dados.
+* **MySQL** como banco de dados.
+* **Thymeleaf** para a renderização do frontend.
+* **Maven** para gerenciamento de dependências.
+* **Git & GitHub** para versionamento de código.
 
 #### Pré-requisitos
 * Java (JDK 21 ou superior)
 * Maven 3.x
 * MySQL Server
 
-#### Passos para Configuração
-1.  **Clone o Repositório**
-    ```bash
-    git clone [URL_DO_SEU_REPOSITORIO]
-    ```
 
-2.  **Configure o Banco de Dados**
-    * Abra seu cliente MySQL e crie um novo banco de dados chamado `escola`.
-        ```sql
-        CREATE DATABASE escola;
-        ```
-    * Abra o arquivo `src/main/resources/application.properties`.
-    * Altere as propriedades `spring.datasource.username` e `spring.datasource.password` para corresponder às suas credenciais do MySQL.
-
-3.  **Execute a Aplicação**
-    * Abra o projeto na sua IDE (IntelliJ).
-    * Encontre a classe `EscolaApplication.java` e execute o método `main`.
-    * A aplicação iniciará na porta `8080`.
-
-4.  **Acesse a Aplicação**
-    * Para ver a lista de professores: `http://localhost:8080/professor/listar`
-    * Para ver a lista de categorias: `http://localhost:8080/categoria/listar`
 
 ## Estrutura do Projeto e Responsabilidades
 
